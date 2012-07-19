@@ -24,6 +24,7 @@ function genesis_responsive_slider_defaults() {
 		'slideshow_arrows' => 1,
 		'slideshow_pager' => 1,
 		'slideshow_loop' => 1,
+		'slideshow_no_link' => 0,
 		'slideshow_height' => 400,
 		'slideshow_width' => 920,
 		'slideshow_effect' => 'slide',
@@ -245,7 +246,7 @@ function genesis_responsive_slider_options_box() {
 					<p><strong style="display: block; font-size: 11px; margin-top: 10px;"><?php _e( 'Include or Exclude by Taxonomy ID', 'genesis-responsive-slider' ); ?></strong></p>
 
 					<p>
-						<label for="<?php echo GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD; ?>[exclude_terms]"><?php printf( __( 'List which category, tag or other taxonomy IDs to include / exclude. (1,2,3,4 for example)', 'genesis-responsive-slider' ), '<br />' ); ?></label>
+						<label for="<?php echo GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD; ?>[exclude_terms]"><?php printf( __( 'List which category, tag or other taxonomy IDs to exclude. (1,2,3,4 for example)', 'genesis-responsive-slider' ), '<br />' ); ?></label>
 					</p>
 
 					<p>
@@ -344,6 +345,10 @@ function genesis_responsive_slider_options_box() {
 			<hr class="div" />
 
 			<h4><?php _e( 'Content Settings', 'genesis-responsive-slider' ); ?></h4>
+
+				<p>
+					<input type="checkbox" name="<?php echo GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD; ?>[slideshow_no_link]" id="<?php echo GENESIS_SLIDER_SETTINGS_FIELD; ?>[slideshow_title_show]" value="1" <?php checked(1, genesis_get_responsive_slider_option('slideshow_no_link')); ?> /> <label for="<?php echo GENESIS_SLIDER_SETTINGS_FIELD; ?>[slideshow_no_link]"><?php _e( 'Do not link Slider image to Post/Page.', 'genesis-slider' ); ?></label>
+				</p>
 
 				<p>
 					<input type="checkbox" name="<?php echo GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD; ?>[slideshow_title_show]" id="<?php echo GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD; ?>[slideshow_title_show]" value="1" <?php checked(1, genesis_get_responsive_slider_option('slideshow_title_show')); ?> /> <label for="<?php echo GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD; ?>[slideshow_title_show]"><?php _e( 'Display Post/Page Title in Slider?', 'genesis-responsive-slider' ); ?></label>
