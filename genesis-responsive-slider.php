@@ -6,7 +6,7 @@
 	Author: StudioPress
 	Author URI: http://www.studiopress.com
 
-	Version: 0.9.1
+	Version: 0.9.2
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -21,7 +21,7 @@
  */
 
 define( 'GENESIS_RESPONSIVE_SLIDER_SETTINGS_FIELD', 'genesis_responsive_slider_settings' );
-define( 'GENESIS_RESPONSIVE_SLIDER_VERSION', '0.9.1' );
+define( 'GENESIS_RESPONSIVE_SLIDER_VERSION', '0.9.2' );
 
 add_action( 'after_setup_theme', 'GenesisResponsiveSliderInit', 15 );
 /**
@@ -338,12 +338,12 @@ class genesis_responsive_sliderWidget extends WP_Widget {
 						<div class="slide-image">
 					<?php
 						if ( $no_image_link ) {
-
-							genesis_image( 'format=html&size=slider' );
-
+					?>
+							<img src="<?php genesis_image( 'format=url&size=slider' ); ?>" alt="<?php the_title(); ?>" />
+					<?php
 						} else {
 					?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php genesis_image( 'format=html&size=slider' ); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><img src="<?php genesis_image( 'format=url&size=slider' ); ?>" alt="<?php the_title(); ?>" /></a>
 					<?php
 
 						} // $no_image_link
