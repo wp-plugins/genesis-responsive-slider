@@ -6,7 +6,7 @@
 	Author: StudioPress
 	Author URI: http://www.studiopress.com
 
-	Version: 0.9.2
+	Version: 0.9.3
 
 	License: GNU General Public License v2.0 (or later)
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -204,10 +204,10 @@ function genesis_responsive_slider_excerpt_more( $more ) {
  */
 class genesis_responsive_sliderWidget extends WP_Widget {
 
-		function genesis_responsive_sliderWidget() {
+		function __construct() {
 			$widget_ops = array( 'classname' => 'genesis_responsive_slider', 'description' => __( 'Displays a slideshow inside a widget area', 'genesis-responsive-slider' ) );
 			$control_ops = array( 'width' => 200, 'height' => 250, 'id_base' => 'genesisresponsiveslider-widget' );
-			$this->WP_Widget( 'genesisresponsiveslider-widget', __( 'Genesis - Responsive Slider', 'genesis-responsive-slider' ), $widget_ops, $control_ops );
+			parent::__construct( 'genesisresponsiveslider-widget', __( 'Genesis - Responsive Slider', 'genesis-responsive-slider' ), $widget_ops, $control_ops );
 		}
 
 		function save_settings( $settings ) {
